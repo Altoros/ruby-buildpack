@@ -23,8 +23,8 @@ url_to_dependency_map:
   - match: rails3_serve_static_assets
     name: rails3_serve_static_assets
     version: 0
-  - match: openjdk1.8-latest
-    name: openjdk1.8-latest
+  - match: openjdk1.8
+    name: openjdk1.8
     version: 0
 
 dependencies:
@@ -58,8 +58,8 @@ dependencies:
     md5: 53ec25d17a33791989873388d779d644
     cf_stacks:
       - cflinuxfs2
-  - name: openjdk1.8-latest
-    version: 0
+  - name: openjdk1.8
+    version: 1.8.0_51
     uri: https://download.run.pivotal.io/openjdk/trusty/x86_64/openjdk-1.8.0_51.tar.gz
     md5: aeb29e36b1b1efec8b888c76a21a8d13
     cf_stacks:
