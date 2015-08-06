@@ -2,7 +2,7 @@
 
 set -ex
 
-tar xzf ruby/ruby-2.1.5.tar.gz
+tar xzf ruby-2.1.5.tar.gz
 cd ruby-2.1.5
 curl "http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;hb=HEAD;f=config.guess" > ./tool
 curl "http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;hb=HEAD;f=config.sub" > ./tool
