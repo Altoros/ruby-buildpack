@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 require 'yaml'
-require 'net/http'
+require 'fileutils'
+require 'open-uri'
 
 def usage
   puts "usage:"
@@ -12,7 +13,9 @@ end
 
 def download(options)
   url, file  = options[:from], options[:to]
-  File.write(file, Net::HTTP.get(URI.parse(url)))
+  File.open(file, 'wb') do |fo|
+    fo.write open(url).read
+  end
 end
 
 manifest_file = ARGV.first
@@ -22,6 +25,7 @@ root_folder = File.expand_path(File.join(File.dirname(__FILE__), '..'))
 
 build_folder = File.join(root_folder, 'build')
 scripts_folder = File.join(root_folder, 'scripts')
+target_folder = File.join(root_folder, 'target')
 
 packages.each do |package|
   Dir.chdir(build_folder) do |dir|
