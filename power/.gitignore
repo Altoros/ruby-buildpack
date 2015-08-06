@@ -1,2 +1,3 @@
 build/*
 target/*
+secret.yml

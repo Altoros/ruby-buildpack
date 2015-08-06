@@ -1,5 +1,4 @@
 ---
-
 - name: node
   version: 0.12.7
   url: https://github.com/andrewlow/node/archive/v0.12.7-release-ppc.tar.gz
