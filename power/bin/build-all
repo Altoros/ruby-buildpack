@@ -49,7 +49,7 @@ packages.each do |package|
 
 
     puts "Running script #{script_name}"
-    result = system({ "install_target" => target_folder }, "#{script_name}")
+    result = system({ "install_target" => target_folder }, "./#{script_name}")
     puts "Done."
     puts result.inspect
   end
