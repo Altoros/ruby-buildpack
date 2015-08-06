@@ -31,22 +31,30 @@ dependencies:
   - name: node
     version: 0.12.7
     uri: https://power-ruby-buildpack.s3-us-west-2.amazonaws.com/node-0.12.7.tar.gz
-    md5: 9e8117500f0c9c1a370c1609be02d075
+    md5: 34c3d1d7ce78b83f99314efad4142502
     cf_stacks:
-      - trustyppc64le
+    - trustyppc64le
 
   - name: libyaml
     version: 0.1.6
     uri: https://power-ruby-buildpack.s3-us-west-2.amazonaws.com/libyaml-0.1.6.tar.gz
-    md5: 9e8117500f0c9c1a370c1609be02d075
+    md5: 65e924d1b548a0a792909056a01d6ae4
     cf_stacks:
-      - trustyppc64le
+    - trustyppc64le
 
   - name: ruby
     version: 2.1.5
     uri: https://power-ruby-buildpack.s3-us-west-2.amazonaws.com/ruby-2.1.5.tar.gz
-    md5: 95e26faf64673bdfbc2f75a6d14a3cd7
+    md5: e7c0d377974d100a54d0ef49bf9e7180
     cf_stacks:
+    - trustyppc64le
+
+  - name: bundler
+    version: 1.9.7
+    uri: https://pivotal-buildpacks.s3.amazonaws.com/ruby/binaries/shared/bundler-1.9.7.tgz
+    md5: 895b476cc0eba8b2cd978a5c5767bc71
+    cf_stacks:
+      - cflinuxfs2
       - trustyppc64le
 
   - name: rails_log_stdout
