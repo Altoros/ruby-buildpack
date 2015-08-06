@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+def usage
+  puts "usage:"
+  puts "  build-all <manifest-file>"
+  puts
+  puts "  build dependencies needed by Ruby buildpack"
+  exit(1)
+end
