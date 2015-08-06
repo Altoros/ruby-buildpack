@@ -34,7 +34,7 @@ manifest = packages.map do |package|
     'name'      => package['name'],
     'version'   => package['version'],
     'uri'       => obj.public_url, 
-    'md5'       => Digest::MD5.file(File.join(binaries_folder, archive_file_name)).hexdigest
+    'md5'       => Digest::MD5.file(File.join(binaries_folder, archive_file_name)).hexdigest,
     'cf_stacks' => [
       package['stack']
     ]
