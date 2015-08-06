@@ -37,7 +37,7 @@ packages.each do |package|
     package_name = "#{package['name']}-#{package['version']}"
     archive_file_name = "#{package_name}.tar.gz"
     puts "Downloading #{package_name}..."
-    download(from: package['url'], to: archive_file_name)
+    download(from: package['url'], to: archive_file_name) unless File.exist?(archive_file_name)
     puts "Done."
 
     script_name = package['script'] || "#{package['name']}-#{package['version']}.sh"
