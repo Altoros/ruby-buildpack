@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 set -ex
 
-# git clone -b v0.12.7-release https://github.com/andrewlow/node.git 
+tar -xzvf node-0.12.7.tar.gz
+cd node-0.12.7
 
-# cd node
 # ./configure --prefix=${install_target}
-# make binary
+# make
+# make install
