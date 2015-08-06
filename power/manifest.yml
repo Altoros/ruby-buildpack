@@ -4,14 +4,14 @@
   version: 0.12.7
   url: https://github.com/andrewlow/node/archive/v0.12.7.tar.gz
 
-- name: libyaml
-  version: 0.1.6
-  url: https://blob.cfblob.com/b3ed7d5e-4c46-4c81-8ac7-04d070dd9cc8
+# - name: libyaml
+#   version: 0.1.6
+#   url: https://blob.cfblob.com/b3ed7d5e-4c46-4c81-8ac7-04d070dd9cc8
 
-- name: ruby
-  version: 2.1.5
-  url: https://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.5.tar.gz
+# - name: ruby
+#   version: 2.1.5
+#   url: https://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.5.tar.gz
 
-- name: bundler
-  version: 1.9.7
-  url: https://github.com/bundler/bundler/archive/v1.9.7.tar.gz
+# - name: bundler
+#   version: 1.9.7
+#   url: https://github.com/bundler/bundler/archive/v1.9.7.tar.gz

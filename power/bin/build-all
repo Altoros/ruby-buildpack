@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+require 'yaml'
+require 'net/http'
 
 def usage
   puts "usage:"
@@ -6,4 +8,34 @@ def usage
   puts
   puts "  build dependencies needed by Ruby buildpack"
   exit(1)
+end
+
+def download(options)
+  url, file  = options[:from], options[:to]
+  File.write(file, Net::HTTP.get(URI.parse(url)))
+end
+
+manifest_file = ARGV.first
+packages = YAML.load_file(manifest_file)
+
+root_folder = File.expand_path(File.join(File.dirname(__FILE__), '..'))
+
+build_folder = File.join(root_folder, 'build')
+scripts_folder = File.join(root_folder, 'scripts')
+
+packages.each do |package|
+  Dir.chdir(build_folder) do |dir|
+    package_name = "#{package['name']}-#{package['version']}"
+    archive_file_name = "#{package_name}.tar.gz"
+    puts "Downloading #{package_name}..."
+    download(from: package['url'], to: archive_file_name)
+    puts "Done."
+
+    script_name = package['script'] || "#{package['name']}-#{package['version']}.sh"
+    FileUtils.cp(File.join(scripts_folder, script_name), build_folder)
+
+    puts "Running script #{script_name}"
+    system({ "install_target" => target_folder }, script_name)
+    puts "Done."
+  end
 end
