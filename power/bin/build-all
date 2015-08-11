@@ -55,7 +55,6 @@ packages.each do |package|
         download(from: src['url'], to: src['name'])
       end
     else
-
       puts "Can't find what sources to fetch"
     end
     puts "Done."
