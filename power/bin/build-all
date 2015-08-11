@@ -14,7 +14,7 @@ end
 def download(options)
   url, file = options[:from], options[:to]
   file ||= File.basename(url)
-  if !File.exist?(file) || option[:force]
+  if !File.exist?(file) || options[:force]
     puts "Downloading #{file}."
     File.open(file, 'wb') do |fo|
       fo.write open(url).read
