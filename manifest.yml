@@ -31,21 +31,21 @@ dependencies:
   - name: node
     version: 0.12.7
     uri: https://power-ruby-buildpack.s3-us-west-2.amazonaws.com/node-0.12.7.tar.gz
-    md5: 34c3d1d7ce78b83f99314efad4142502
+    md5: 5deeeb22e87099e6c1afec3ea1f341dd
     cf_stacks:
     - trustyppc64le
 
   - name: libyaml
     version: 0.1.6
     uri: https://power-ruby-buildpack.s3-us-west-2.amazonaws.com/libyaml-0.1.6.tar.gz
-    md5: 65e924d1b548a0a792909056a01d6ae4
+    md5: b67191c2a0b945bca07e24af0c34f3cf
     cf_stacks:
     - trustyppc64le
 
   - name: ruby
     version: 2.1.5
     uri: https://power-ruby-buildpack.s3-us-west-2.amazonaws.com/ruby-2.1.5.tar.gz
-    md5: e7c0d377974d100a54d0ef49bf9e7180
+    md5: 2849b938dd7b745b014095cc2d37f68c
     cf_stacks:
     - trustyppc64le
 
