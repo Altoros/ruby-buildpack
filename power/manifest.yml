@@ -11,8 +11,12 @@
 
 - name: ruby
   version: 2.1.5
-  url: https://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.5.tar.gz
+  downloads: 
+    - url: "https://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.5.tar.gz"
+    - url: "http://production.cf.rubygems.org/rubygems/rubygems-2.1.11.tgz"
+    - url: "https://rubygems.org/downloads/bundler-1.9.4.gem"
   stack: trustyppc64le
+
 
 # - name: bundler
 #   version: 1.9.7

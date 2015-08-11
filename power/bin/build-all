@@ -12,9 +12,15 @@ def usage
 end
 
 def download(options)
-  url, file  = options[:from], options[:to]
-  File.open(file, 'wb') do |fo|
-    fo.write open(url).read
+  url, file = options[:from], options[:to]
+  file ||= File.basename(url)
+  if !File.exist?(file) || option[:force]
+    puts "Downloading #{file}."
+    File.open(file, 'wb') do |fo|
+      fo.write open(url).read
+    end
+  else
+    puts "Skipping: #{file} exists."
   end
 end
 
@@ -41,7 +47,17 @@ packages.each do |package|
 
   Dir.chdir(build_folder) do
     puts "Downloading #{package_name}..."
-    download(from: package['url'], to: archive_file_name) unless File.exist?(archive_file_name)
+
+    if package['url']
+      download(from: package['url'], to: archive_file_name)
+    elsif package['downloads']
+      package['downloads'].each do |src|
+        download(from: src['url'], to: src['name'])
+      end
+    else
+
+      puts "Can't find what sources to fetch"
+    end
     puts "Done."
 
     script_name = package['script'] || "#{package['name']}-#{package['version']}.sh"
