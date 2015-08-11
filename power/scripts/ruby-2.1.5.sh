@@ -13,7 +13,7 @@ popd
 
 tar -zxvf rubygems-2.1.11.tgz
 pushd rubygems-2.1.11
-  ${install_target}/bin/ruby setup.rb
+  ${install_target}/bin/ruby setup.rb --no-ri --no-rdoc --prefix=${install_target}
 popd
 
 ${install_target}/bin/gem install bundler-1.9.4.gem --no-ri --no-rdoc
